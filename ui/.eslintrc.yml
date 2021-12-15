@@ -1,0 +1,15 @@
+env:
+  browser: true
+  es2021: true
+extends:
+  - airbnb-base
+parserOptions:
+  ecmaVersion: 12
+globals:
+    $: writable
+    AWS: writable
+    awsRegion: writable
+    lambdaFunction: writable
+    bucketName: writable
+    IdentityPoolId: writable
+rules: {}

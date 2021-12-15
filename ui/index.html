@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Voice Translator</title>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/voice-translator.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="manifest" href="manifest.json" />
+  </head>
+      <body class='blue-grey lighten-3'>
+        <div class="container" style="width:100%">
+          <div class="row">
+              <div class="col s12">
+                <div class="card center z-depth-5">
+        
+                  <div class="card-image">
+                    <img class="responsive-img"  src="/images/AWS.png">
+                  </div>
+
+                  <div class="input-field col s12">
+                    <select class="icons">
+                      <option id="source_en" value="source-en-IN" selected >English</option>
+                      <option id="source_hi" value="source-hi-IN" >Hindi</option>
+                      <option id="source_bn" value="source-bn-IN" >Bengali</option>
+                      <option id="source_ta" value="source-ta-IN" >Tamil</option>
+                      <option id="source_pl" value="source-pl-PL" >Polish</option>
+                      <option id="source_es" value="source-es-ES" >Spanish</option>
+                      <option id="source_fr" value="source-fr-FR" >French</option>
+                      <option id="source_ja" value="source-ja-JP" >Japanese</option>
+                      <option id="source_ru" value="source-ru-RU" >Russian</option>
+                      <option id="source_it" value="source-it-IT" >Italian</option>
+                      <option id="source_sv" value="source-sv-SE" >Swedish</option>
+                      <option id="source_de" value="source-de-DE" >German</option>
+                    </select>
+                    <label>Select Source Language</label>
+                  </div>
+                  <br>
+                  <i class="material-icons">autorenew </i>
+                  <br>
+                  <div class="input-field col s12">
+                    <select class="icons">
+                      <option  id="target_hi" value="target-hi-IN" selected >Hindi</option>
+                      <option  id="target_en" value="target-en-IN" >English</option>
+                      <option id="target_pl" value="target-pl-Pl" >Polish</option>
+                      <option id="target_fr" value="target-fr-FR" >French</option>
+                      <option id="target_fr" value="target-fr-FR" >French</option>
+                      <option id="target_ja" value="target-ja-JP" >Japanese</option>
+                      <option id="target_ru" value="target-ru-RU" >Russian</option>
+                      <option id="target_it" value="target-it-IT" >Italian</option>
+                      <option id="target_sv" value="target-sv-SE" >Swedish</option>
+                      <option id="target_de" value="target-de-DE" >German</option>
+                      <option id="target_es" value="target-es-ES" >Spanish</option>
+
+                    </select>
+                    <label> Select Target Language</label>
+                  </div>
+                  <br><br>
+                  <div class="card-content">
+                    <h6>Input Text</h6>
+                    <div id="results" style="margin-bottom: 40px">
+                      <span class="final" id="final_span"></span>
+                      <span class="interim" id="interim_span"></span>
+                    </div>
+                  </div>
+        
+        
+                  <a id='start_button' onclick="babelStart();" class="btn-floating btn-large red"><i class="material-icons" id='speakButtonIcon'>mic </i></a>
+                  <a id='stop_button'  onclick="babelStop();" class="btn-floating btn-large grey hide"><i class="material-icons" id='speakButtonIcon'>stop_circle </i></a>
+
+                  <br><br>
+                  <span id="processing">Processing...</span>
+                  <div id="audio-output"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+            
+        </body>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="/js/voice-translator-config.js"></script>
+        <script src="/js/voice-translator.js"></script>
+  </body>
+  <script>
+    if ("serviceWorker" in navigator) {
+      console.log("Will the service worker register?");
+      navigator.serviceWorker
+        .register("service-worker.js")
+        .then(function (reg) {
+          console.log("Yes, it did.");
+        })
+        .catch(function (err) {
+          console.log("No it didn't. This happened:", err);
+        });
+    }
+  </script>
+</html>

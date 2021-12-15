@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+  Code:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+Outputs:
+  VoiceTranslatorCodeBucket:
+    Description: VoiceTranslator Code S3 Bucket
+    Value: !Ref Code

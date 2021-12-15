@@ -1,0 +1,20 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "description": "static website for voice translator",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dinesh Sharma",
+  "contributors": [
+    {"name":"Darshit Vora","url":"https://github.com/darshitvvora"},
+    {"name":"Neil DCruz", "url":"https://github.com/neildcruz"}
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
